@@ -36,6 +36,8 @@
         }
 
         async loadModel(t, s, n) {
+            console.log(this.useCDN)
+            console.log(localStorage.setItem("modelId", t), localStorage.setItem("modelTexturesId", s), o(n, 4e3, 10), this.useCDN)
             if (localStorage.setItem("modelId", t), localStorage.setItem("modelTexturesId", s), o(n, 4e3, 10), this.useCDN) {
                 this.modelList || await this.loadModelList();
                 const o = e(this.modelList.models[t]);
