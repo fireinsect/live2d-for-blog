@@ -23,10 +23,11 @@
     class s {
         constructor(e) {
             let {apiPath: t, cdnPath: o} = e, s = !1;
-            if ("string" != typeof o) s = !0, o.endsWith("/") || (o += "/"); else {
-                if ("string" != typeof t) throw "Invalid initWidget argument!";
-                t.endsWith("/") || (t += "/")
-            }
+            if (typeof o === "string") {
+		        s = true;
+		        if (!o.endsWith("/")) o += "/";
+	        }
+            if (!t.endsWith("/")) t += "/";
             this.useCDN = s, this.apiPath = t, this.cdnPath = o
         }
 
@@ -36,8 +37,6 @@
         }
 
         async loadModel(t, s, n) {
-            console.log(this.useCDN)
-            console.log(localStorage.setItem("modelId", t), localStorage.setItem("modelTexturesId", s), o(n, 4e3, 10), this.useCDN)
             if (localStorage.setItem("modelId", t), localStorage.setItem("modelTexturesId", s), o(n, 4e3, 10), this.useCDN) {
                 this.modelList || await this.loadModelList();
                 const o = e(this.modelList.models[t]);
