@@ -166,7 +166,7 @@
             }))
         }
 
-        localStorage.removeItem("waifu-display"), sessionStorage.removeItem("waifu-text"), document.body.insertAdjacentHTML("beforeend", '<div id="waifu">\n            <div id="waifu-tips"></div>\n            <canvas id="live2d" width="800" height="800"></canvas>\n            <div id="waifu-tool"></div>\n        </div>'), setTimeout((() => {
+        localStorage.removeItem("waifu-display"), sessionStorage.removeItem("waifu-text"), document.body.insertAdjacentHTML("beforeend", '<div id="waifu">\n            <div id="waifu-tips"></div>\n            <canvas id="live2d" width="400" height="400"></canvas>\n            <div id="waifu-tool"></div>\n        </div>'), setTimeout((() => {
             document.getElementById("waifu").style.bottom = 0
         }), 0), function () {
             n["switch-model"].callback = () => i.loadOtherModel(), n["switch-texture"].callback = () => i.loadRandModel(), Array.isArray(t.tools) || (t.tools = Object.keys(n));
