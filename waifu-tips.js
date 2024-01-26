@@ -23,11 +23,10 @@
     class s {
         constructor(e) {
             let {apiPath: t, cdnPath: o} = e, s = !1;
-            if (typeof o === "string") {
-		        s = true;
-		        if (!o.endsWith("/")) o += "/";
-	        }
-            if (!t.endsWith("/")) t += "/";
+            if ("string" == typeof o) s = !0, o.endsWith("/") || (o += "/"); else {
+                if ("string" != typeof t) throw "Invalid initWidget argument!";
+                t.endsWith("/") || (t += "/")
+            }
             this.useCDN = s, this.apiPath = t, this.cdnPath = o
         }
 
@@ -37,6 +36,7 @@
         }
 
         async loadModel(t, s, n) {
+            console.log(this.useCDN)
             if (localStorage.setItem("modelId", t), localStorage.setItem("modelTexturesId", s), o(n, 4e3, 10), this.useCDN) {
                 this.modelList || await this.loadModelList();
                 const o = e(this.modelList.models[t]);
@@ -167,7 +167,7 @@
             }))
         }
 
-        localStorage.removeItem("waifu-display"), sessionStorage.removeItem("waifu-text"), document.body.insertAdjacentHTML("beforeend", '<div id="waifu">\n            <div id="waifu-tips"></div>\n            <canvas id="live2d" width="400" height="400"></canvas>\n            <div id="waifu-tool"></div>\n        </div>'), setTimeout((() => {
+        localStorage.removeItem("waifu-display"), sessionStorage.removeItem("waifu-text"), document.body.insertAdjacentHTML("beforeend", '<div id="waifu">\n            <div id="waifu-tips"></div>\n            <canvas id="live2d" width="800" height="800"></canvas>\n            <div id="waifu-tool"></div>\n        </div>'), setTimeout((() => {
             document.getElementById("waifu").style.bottom = 0
         }), 0), function () {
             n["switch-model"].callback = () => i.loadOtherModel(), n["switch-texture"].callback = () => i.loadRandModel(), Array.isArray(t.tools) || (t.tools = Object.keys(n));
