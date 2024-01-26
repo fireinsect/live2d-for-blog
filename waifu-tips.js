@@ -23,7 +23,7 @@
     class s {
         constructor(e) {
             let {apiPath: t, cdnPath: o} = e, s = !1;
-            if ("string" == typeof o) s = !0, o.endsWith("/") || (o += "/"); else {
+            if ("string" != typeof o) s = !0, o.endsWith("/") || (o += "/"); else {
                 if ("string" != typeof t) throw "Invalid initWidget argument!";
                 t.endsWith("/") || (t += "/")
             }
