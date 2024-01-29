@@ -42,7 +42,10 @@
 		"selector": ".menu-item-friends a",
 		"text": ["这是我的朋友们哦ヾ(◍°∇°◍)ﾉﾞ", "要去大佬们的家看看吗？", "要去拜访一下我的朋友们吗？"]
 	}, {
-		"selector": ".menu-item-search a",
+		"selector": ".search-form",
+		"text": ["找不到想看的内容？搜索看看吧！", "在找什么东西呢，需要帮忙吗？"]
+	}, {
+		"selector": ".search-button",
 		"text": ["找不到想看的内容？搜索看看吧！", "在找什么东西呢，需要帮忙吗？"]
 	}, {
 		"selector": ".menu-item a",
@@ -84,10 +87,10 @@
 		"selector": "a[href^='/categories/']",
 		"text": ["要去看看 <span>{text}</span> 分类么？", "点它可以查看此分类下的所有文章哟！"]
 	}, {
-		"selector": ".post-title-link",
+		"selector": ".wp-block-post-title",
 		"text": ["要看看 <span>{text}</span> 这篇文章吗？"]
 	}, {
-		"selector": "a[rel='contents']",
+		"selector": "a.wp-block-post-excerpt__more-link",
 		"text": ["点击来阅读全文哦。"]
 	}, {
 		"selector": "a[itemprop='discussionUrl']",
